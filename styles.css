@@ -658,6 +658,7 @@ textarea.form-control {
     font-size: 1.2rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
 }
 
 .social-icons a.facebook {
