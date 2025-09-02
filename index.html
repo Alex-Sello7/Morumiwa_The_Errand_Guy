@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <script src="https://unpkg.com/phosphor-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <title>Morumiwa</title>
 </head>
 <body>
+    
     <div id="splash">
-        <img src="imgs/Morumiwa_logo.png" alt="Cascade Creations Logo">
+        <img src="imgs/Morumiwa_logo.png" style="border: 0px;" alt="Morumiwa Logo">
         <p>Loading . . .</p>
+        <br><br>
+        <p style="font-size: smaller;"><span style="color: var(--primary-dark);">Cascade</span><span style="color: rgb(230, 183, 230);">Creations</span></p>
     </div> 
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#hero">
-                <div class="flex items-center">
-                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3">
-                        <img src="imgs/headerbg.png" style="max-width: 50px;" alt="" srcset="">
+                <div class="d-flex align-items-center">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full d-flex align-items-center justify-content-center mr-3">
+                        <img src="imgs/headerbg.png" style="max-width: 50px;" alt="Morumiwa Logo">
                     </div>
-                    <span class="text-xl font-bold text-blue-800">Morumiwa</span>
-                    <span class="text-gray-600">Logistics</span>
+                    <span class="text-xl fw-bold text-blue-800" style="color: var(--primary-dark);">Morumiwa</span>
+                    <span class="text-gray-600" style="color: black;">Logistics</span>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,28 +46,29 @@
                             More
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="#services">Services</a></li>
                             <li><a class="dropdown-item" href="#pricing">Pricing</a></li>
                             <li><a class="dropdown-item" href="#testimonials">Testimonials</a></li>
                         </ul>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact Us</a>
+                        <a class="nav-link" href="#contact-section">Contact Us</a>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
+    
     <!--hero section-->
     <section id="hero" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <div class="col-lg-6 hero-content">
                     <h1>Reliable Logistics Solutions For Your Needs</h1>
                     <p class="lead">With Morumiwa, you can be in two places at once. We handle your errands so you can focus on what matters most.</p>
                     <div class="hero-buttons mt-4">
-                        <a href="#contact" class="btn btn-primary me-3">
+                        <a href="#contact-section" class="btn btn-primary me-3">
                             <i class="fas fa-phone me-2"></i>Contact Us
                         </a>
                         <a href="#services" class="btn btn-outline-light">
@@ -75,7 +77,7 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                <div class="col-lg-6">
                     <div class="service-highlight">
                         <div class="highlight-header">
                             <h3><i class="fas fa-star me-2"></i>Why Choose Morumiwa?</h3>
@@ -115,8 +117,9 @@
             </div>
         </div>
     </section>
+    
     <!-- Services Preview Section -->
-    <section class="services-preview bg-light py-5">
+    <section class="services-preview bg py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
@@ -149,15 +152,26 @@
                         <a href="#contact" class="btn-link">Book An Errand <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                <p>Errands We Specially Cater For</p>
+                <div class="divider"></div>
             </div>
         </div>
     </section>
+    
+    <div class="svg-divider curve-divider-top">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#FFFFFF"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#FFFFFF"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#FFFFFF"></path>
+        </svg>
+    </div>
+    
     <!--about section-->
-     <section id="about" class="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 style="color: black;">About Us</h2>
+                    <h2>About Us</h2>
                     <p>Morumiwa Logistics Holdings, also known as Morumiwa the Errand Guys, is a specialized logistics and errand-running company based in South Africa. We understand the fundamental challenge individuals and organizations face: the impossibility of being in two places at once.</p>
                     
                     <p>This creates a significant gap between what needs to be done and the time and physical capacity to do it, leading to lost opportunities and added stress. Morumiwa is dedicated to solving this problem.</p>
@@ -201,288 +215,328 @@
             </div>
         </div>
     </section>
-    <!--services-->
-    <section id="services" class="services py-20 bg-[#FDFBF8]">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Our Comprehensive Services</h2>
-                <p class="mt-4 text-gray-600">Morumiwa specializes in running errands for individuals, businesses, and hospitals. Explore our tailored services below to find the perfect solution for your needs.</p>
+    
+    <div class="svg-divider wave-divider-bottom">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#FFFFFF"></path>
+        </svg>
+    </div>
+    
+    <!--services section-->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Our Services</h2>
+                <p class="lead">We offer a wide range of errand and logistics services to make your life easier</p>
+                <div class="divider"></div>
             </div>
-            <div class="flex justify-center mb-8 space-x-2 md:space-x-4">
-                <button class="tab-button active font-semibold py-2 px-4 md:px-6 rounded-full bg-gray-200 text-gray-700 btn btn-highlight" data-tab="individual">Personal Errands</button>
-                <button class="tab-button font-semibold py-2 px-4 md:px-6 rounded-full bg-gray-200 text-gray-700 btn btn-highlight" data-tab="business">Business Errands</button>
-                <button class="tab-button font-semibold py-2 px-4 md:px-6 rounded-full bg-gray-200 text-gray-700 btn btn-highlight" data-tab="hospital">Hospital Errands</button>
-            </div>
-
-            <div class="mx-auto">
-                <div id="individual" class="content-section active">
-                    <div class="bg-white p-8 rounded-lg shadow-sm">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Individual Errands</h3>
-                        <p class="text-gray-600 mb-6">We provide a helping hand for busy individuals and families, handling everyday tasks and important personal appointments with professionalism.</p>
-                        <ul class="space-y-4 text-gray-700">
-                            <li class="flex items-start"><span class="text-xl text-[#D97706] mr-3">&#10003;</span><span><strong class="font-semibold">Core Errands:</strong> Grocery shopping, food delivery, and pharmacy medicine collection.</span></li>
-                            <li class="flex items-start"><span class="text-xl text-[#D97706] mr-3">&#10003;</span><span><strong class="font-semibold">Premium Errands:</strong> Attending parent meetings as a professional representative, and license disk renewal.</span></li>
-                        </ul>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-preview-card">
+                        <div class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h4>Shopping & Deliveries</h4>
+                        <p>Grocery shopping, prescription pickups, and retail purchases delivered to your door</p>
+                        <a href="#contact-section" class="btn-link">Book This Service <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div id="business" class="content-section">
-                    <div class="bg-white p-8 rounded-lg shadow-sm">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Business Errands</h3>
-                        <p class="text-gray-600 mb-6">We act as a reliable partner for businesses and organizations, providing logistical support that allows your team to maintain focus and productivity.</p>
-                        <ul class="space-y-4 text-gray-700">
-                            <li class="flex items-start"><span class="text-xl text-[#D97706] mr-3">&#10003;</span><span><strong class="font-semibold">Core Errands:</strong> Staff transport, bank deposits, and courier services.</span></li>
-                            <li class="flex items-start"><span class="text-xl text-[#D97706] mr-3">&#10003;</span><span><strong class="font-semibold">Premium Errands:</strong> Attending tender briefings on your behalf and providing extra hands for deco and event companies.</span></li>
-                        </ul>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="service-preview-card">
+                        <div class="icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Document Handling</h4>
+                        <p>Drop off and pick up important documents, applications, and packages</p>
+                        <a href="#contact-section" class="btn-link">Book This Service <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div id="hospital" class="content-section">
-                    <div class="bg-white p-8 rounded-lg shadow-sm">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Hospital Errands</h3>
-                        <p class="text-gray-600 mb-6">We provide compassionate and specialized services for patients, their families, and hospital staff. This includes:</p>
-                        <ul class="space-y-4 text-gray-700">
-                            <li class="flex items-start"><span class="text-xl text-[#D97706] mr-3">&#10003;</span><span>**For Patients:** Collection and delivery of personal items like blankets, warm meals, and personal hygiene products; bill payments, and assignment submission.</span></li>
-                            <li class="flex items-start"><span class="text-xl text-[#D97706] mr-3">&#10003;</span><span>**For Staff:** Meal delivery and other conveniences, helping busy healthcare professionals save time.</span></li>
-                        </ul>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="service-preview-card">
+                        <div class="icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Home Services</h4>
+                        <p>Wait for deliveries, supervise repairs, and handle home-related tasks</p>
+                        <a href="#contact-section" class="btn-link">Book This Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="service-preview-card">
+                        <div class="icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>Business Support</h4>
+                        <p>Office errands, bank deposits, supply runs, and corporate logistics</p>
+                        <a href="#contact-section" class="btn-link">Book This Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="service-preview-card">
+                        <div class="icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h4>Vehicle Services</h4>
+                        <p>Take your car for servicing, repairs, or inspections while you work</p>
+                        <a href="#contact-section" class="btn-link">Book This Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="service-preview-card">
+                        <div class="icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h4>Special Requests</h4>
+                        <p>Unique errands and special tasks - just ask and we'll find a solution</p>
+                        <a href="#contact-section" class="btn-link">Book This Service <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <div class="svg-divider curve-divider-top">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#FFFFFF"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#FFFFFF"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#FFFFFF"></path>
+        </svg>
+    </div>
+    
     <!--pricing section-->
-    <section id="pricing" class="py-16 md:py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-800">Clear and Simple Pricing</h2>
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Our Pricing</h2>
+                <p class="lead">Transparent pricing with no hidden fees</p>
                 <div class="divider"></div>
-                <div class="w-20 h-1 bg-amber-600 mx-auto mt-4 mb-6"></div>
-                <p class="mt-4 text-blue-700">Our transparent pricing model is designed to be fair and easy to understand, with no hidden fees. Prices are calculated based on the type of errand and distance.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <div class="p-6 rounded-lg bg-blue-50 border border-blue-100 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]">
-                    <div class="text-4xl mb-4 text-blue-600">
-                        <i class="fas fa-shopping-cart fa-beat"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-blue-800">Personal Errands</h3>
-                    <p class="text-blue-700 text-sm">Base rate starts at <strong class="text-amber-600">R150</strong> for errands within a 10km radius.</p>
-                    <p class="text-blue-700 text-sm mt-2">Additional charges may apply for time-sensitive or complex tasks.</p>
-                    <div class="mt-6">
-                        <a href="#booking" class="inline-block bg-blue-600 text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Book Now</a>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-preview-card">
+                        <div class="icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <h4>Basic Errands</h4>
+                        <p>Simple tasks within a 5km radius</p>
+                        <h3 class="text-primary">R100</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Up to 1 hour</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Local area</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Simple tasks</li>
+                        </ul>
+                       
                     </div>
                 </div>
                 
-                <div class="p-6 rounded-lg bg-blue-50 border border-blue-100 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]">
-                    <div class="text-4xl mb-4 text-blue-600">
-                        <i class="fas fa-briefcase fa-beat"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-blue-800">Business Errands</h3>
-                    <p class="text-blue-700 text-sm">Per-task rates available on consultation. Courier services start from <strong class="text-amber-600">R250</strong>.</p>
-                    <p class="text-blue-700 text-sm mt-2">Contact us for a tailored quote based on your specific business needs.</p>
-                    <div class="mt-6">
-                        <a href="#booking" class="inline-block bg-blue-600 text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Get Quote</a>
+                <div class="col-md-4 mb-4">
+                    <div class="service-preview-card">
+                        <div class="icon">
+                            <i class="fas fa-bicycle"></i>
+                        </div>
+                        <h4>Standard Errands</h4>
+                        <p>Most common errands within 10km</p>
+                        <h3 class="text-primary">R180</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Up to 2 hours</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Medium distance</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Multiple stops</li>
+                        </ul>
+                     
                     </div>
                 </div>
                 
-                <div class="p-6 rounded-lg bg-blue-50 border border-blue-100 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]">
-                    <div class="text-4xl mb-4 text-blue-600">
-                        <i class="fas fa-hospital-alt fa-beat"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-blue-800">Hospital Errands</h3>
-                    <p class="text-blue-700 text-sm">Food delivery from local restaurants starts at <strong class="text-amber-600">R50</strong>.</p>
-                    <p class="text-blue-700 text-sm mt-2">Medication collection and delivery from <strong class="text-amber-600">R120</strong>.</p>
-                    <p class="text-blue-700 text-sm mt-2">All other personal errands for patients from <strong class="text-amber-600">R70</strong>.</p>
-                    <div class="mt-6">
-                        <a href="#booking" class="inline-block bg-blue-600 text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Request Service</a>
+                <div class="col-md-4 mb-4">
+                    <div class="service-preview-card">
+                        <div class="icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h4>Premium Service</h4>
+                        <p>Complex tasks or longer distances</p>
+                        <h3 class="text-primary">R250+</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Extended time</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Greater distance</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Specialized tasks</li>
+                        </ul>
+                        
                     </div>
                 </div>
             </div>
-            <div class="mt-12 p-6 bg-amber-50 border border-amber-100 rounded-lg">
-                <h3 class="text-xl font-bold text-blue-800 mb-4 text-center">Additional Information</h3>
-                <div class="divider"></div>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="flex items-start">
-                        <div class="text-amber-600 mr-3 mt-1">
-                            <i class="fas fa-info-circle"></i>
-                        </div>
-                        <p class="text-blue-700 text-sm">All prices include VAT and are subject to change based on fuel prices.</p>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="text-amber-600 mr-3 mt-1">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <p class="text-blue-700 text-sm">After-hours services (after 6pm) incur a 20% surcharge.</p>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="text-amber-600 mr-3 mt-1">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <p class="text-blue-700 text-sm">Distance charges: R5 per additional kilometer beyond the included radius.</p>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="text-amber-600 mr-3 mt-1">
-                            <i class="fas fa-gift"></i>
-                        </div>
-                        <p class="text-blue-700 text-sm">Discounts available for recurring clients and bulk orders.</p>
-                    </div>
-                </div>
+            
+            <div class="text-center mt-4">
+                <p class="text-muted">* Prices may vary based on specific requirements, distance, and time. Contact us for a custom quote.</p>
             </div>
-            <div class="bg-blue-50 p-6 rounded-lg shadow-sm border border-blue-100">
-                <h3 class="text-2xl font-bold text-blue-800 mb-4 text-center">Our Dual-Fleet System</h3>
-                <div class="divider"></div>
-                    <p class="text-blue-700 mb-6 text-center">We utilize both motorcycles and vehicles to ensure business continuity and efficiency in all conditions.</p>
-                    <div class="flex items-center justify-around">
-                        <div class="text-center">
-                            <div class="text-5xl mb-2 text-blue-600"><i class="fas fa-motorcycle fa-beat-fade"></i></div>
-                            <div class="font-semibold text-blue-800">Motorcycles</div>
-                            <div class="text-sm text-blue-600">For speed & small items</div>
-                        </div>
-                        <div class="text-4xl text-blue-300 font-bold"><i class="fas fa-plus fa-fade"></i></div>
-                        <div class="text-center">
-                            <div class="text-5xl mb-2 text-blue-600"><i class="fas fa-car fa-beat-fade"></i></div>
-                            <div class="font-semibold text-blue-800">Vehicles</div>
-                            <div class="text-sm text-blue-600">For versatility & large tasks</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
     </section>
-    <!-- Testimonials Section -->
+    
+    <div class="svg-divider wave-divider-bottom">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#FFFFFF"></path>
+        </svg>
+    </div>
+    
+    <!--testimonials section-->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="text-center">What Our Clients Say</h2>
+                <h2 class="display-4 fw-bold">What Our Clients Say</h2>
+                <p class="lead text-white">Don't just take our word for it - hear from our satisfied customers</p>
                 <div class="divider"></div>
             </div>
             
-            <div class="row">
-                <div class="col-12">
-                    <div class="testimonial-carousel-container">
-                        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="testimonial-slide">
-                                        <div class="testimonial-text-container">
-                                            <p>"I'm really impressed with the service I receive from Morumiwa. Their delivery team is prompt, courteous, and efficient. They're always on time, which is fantastic. Plus, their communication is top-notch - they keep me updated every step of the way. They consistently exceed my expectations in every way. I highly recommend Morumiwa for all your delivery needs - they're reliable, trustworthy, and truly exceptional. I'm more than happy to give them five stars - they deserve even more!"</p>
-                                        </div>
-                                        <div class="testimonial-author">
-                                            <h5>Kearabilwe Moabi</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="testimonial-slide">
-                                        <div class="testimonial-text-container">
-                                            <p>"The team at Morumiwa are true professionals. They took the time to understand our needs and delivered a service that perfectly matches our expectations. Their attention to detail and commitment to quality is remarkable. I've recommended them to all my business associates."</p>
-                                        </div>
-                                        <div class="testimonial-author">
-                                            <h5>Tau Kotsokoane</h5>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="testimonial-slide">
-                                        <div class="testimonial-text-container">
-                                            <p>""As a busy doctor, I simply don't have time for personal errands. Morumiwa collects my prescriptions, handles my grocery shopping, and even takes my car for servicing. Their professionalism and discretion make me feel comfortable trusting them with my personal tasks. They've given me back precious hours each week.""</p>
-                                        </div>
-                                        <div class="testimonial-author">
-                                            <h5>Dr. Thabo N. Lepinka</h5>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text-container">
+                                <p class="testimonial-text">"Morumiwa has been a lifesaver for my busy schedule. Their reliable service and quick response time have made them my go-to for all my errand needs. I can finally focus on my work without worrying about fitting in time for shopping and other tasks."</p>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                            <div class="testimonial-author">
+                                <h5>Thabo M.</h5>
+                                <p class="text-muted">Regular Client</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text-container">
+                                <p class="testimonial-text">"As a small business owner, time is my most valuable asset. Morumiwa's business support services have helped me streamline operations by handling important document deliveries and supply runs. Professional, punctual, and trustworthy!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>Lerato K.</h5>
+                                <p class="text-muted">Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text-container">
+                                <p class="testimonial-text">"I was skeptical at first about using an errand service, but Morumiwa completely changed my perspective. They handled my grocery shopping perfectly and even helped with some last-minute items I needed for a family gathering. Will definitely use them again!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <h5>Zanele P.</h5>
+                                <p class="text-muted">Satisfied Customer</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
-    <!-- Contact Section -->
-    <section id="contact">
+    
+    <div class="svg-divider curve-divider-top">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#FFFFFF"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#FFFFFF"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#FFFFFF"></path>
+        </svg>
+    </div>
+    
+    <!--contact section-->
+    <section id="contact-section" class="contact">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="text-center">Get In Touch</h2>
+                <h2 class="display-4 fw-bold">Get In Touch</h2>
+                <p class="lead">Ready to free up your time? Contact us today!</p>
                 <div class="divider"></div>
             </div>
             
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
                     <div class="contact-form">
-                        <form id="booking-form">
-                            <div class="mb-4">
-                                <label for="full_name" class="form-label">Full Name</label>
-                                <input type="text" id="full_name" name="full_name" class="form-control" required>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                </div>
                             </div>
-                            <div class="mb-4">
-                                <label for="contact" class="form-label">Email or Phone Number</label>
-                                <input type="text" id="contact" name="contact" class="form-control" required>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number">
                             </div>
-                            <div class="mb-4">
-                                <label for="errand_type" class="form-label">Type of Errand</label>
-                                <select id="errand_type" name="errand_type" class="form-control">
-                                    <option value="personal">Personal Errand</option>
-                                    <option value="business">Business Errand</option>
-                                    <option value="hospital">Hospital Errand</option>
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Service Needed</label>
+                                <select class="form-select" id="service" required>
+                                    <option value="" selected disabled>Select a service</option>
+                                    <option value="shopping">Shopping & Deliveries</option>
+                                    <option value="documents">Document Handling</option>
+                                    <option value="home">Home Services</option>
+                                    <option value="business">Business Support</option>
+                                    <option value="vehicle">Vehicle Services</option>
+                                    <option value="other">Other/Special Request</option>
                                 </select>
                             </div>
-                            <div class="mb-4">
-                                <label for="date_time" class="form-label">Preferred Date & Time</label>
-                                <input type="datetime-local" id="date_time" name="date_time" class="form-control">
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your errand needs, including any specific details, locations, and timeframe..." required></textarea>
                             </div>
-                            <div class="mb-4">
-                                <label for="description" class="form-label">Errand Details (Be as specific as possible!)</label>
-                                <textarea id="description" name="description" rows="4" class="form-control" required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-highlight">Submit Request</button>
+                            <button type="submit" class="btn btn-primary w-100 py-3">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
                         </form>
                         
                         <div class="social-icons text-center mt-5">
-                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://web.facebook.com/profile.php?id=61553792757221" class="facebook"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
                             <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/27763608844" class="whatsApp"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        <div id="message-box" class="message-box">
-            Your request has been submitted! We'll be in touch shortly.
-        </div>
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold text-blue-800">Morumiwa</span>
-                    <span class="text-gray-600">Logistics</span>
+    <div class="svg-divider wave-divider-bottom">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#FFFFFF"></path>
+        </svg>
+    </div>
+    
+    <!--footer-->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Morumiwa Logistics</h5>
+                    <p>Your reliable errand and logistics solution in South Africa.</p>
                 </div>
-                    <p class="text-gray-400 mt-2">Your trusted errand partners</p>
-                </div>
-                
-                <div class="text-center md:text-right">
-                    <p class="text-gray-400">&copy; 2025 Morumiwa The Errand Guys. All rights reserved.</p>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2023 Morumiwa Logistics. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
     
-        <!-- Bootstrap JS -->
+    <div id="messageBox" class="message-box"></div>
+
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS (Animate On Scroll) -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="index.js"></script>
-    <script src="DOMLoaded.js"></script>
 </body>
 </html>
