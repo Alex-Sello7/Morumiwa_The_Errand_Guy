@@ -1,137 +1,258 @@
+// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Splash screen functionality
-    setTimeout(function() {
-        document.getElementById('splash').style.animation = 'fadeOut 1s ease forwards';
-        setTimeout(function() {
-            document.getElementById('splash').style.display = 'none';
-        }, 1000);
-    }, 3000);
+    // Initialize tab functionality
+    initTabs();
+    
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Initialize navbar scroll behavior
+    initNavbarScroll();
+    
+    // Initialize contact form
+    initContactForm();
+    
+    // Initialize dropdown animations
+    initDropdownAnimations();
+    
+    // Initialize mobile navigation
+    initMobileNavigation();
+    
+    // Initialize hover dropdown for desktop
+    initHoverDropdown();
+});
 
-    // Form submission handling
+// Mobile navigation functionality
+function initMobileNavigation() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarBackdrop = document.createElement('div');
+    
+    // Create backdrop element
+    navbarBackdrop.className = 'navbar-backdrop';
+    document.body.appendChild(navbarBackdrop);
+    
+    // Toggle mobile menu
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navbarCollapse.classList.toggle('show');
+            navbarBackdrop.classList.toggle('active');
+            
+            // Prevent body scrolling when menu is open
+            document.body.style.overflow = isExpanded ? '' : 'hidden';
+        });
+        
+        // Close menu when clicking on backdrop
+        navbarBackdrop.addEventListener('click', function() {
+            navbarToggler.setAttribute('aria-expanded', 'false');
+            navbarCollapse.classList.remove('show');
+            navbarBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close menu when clicking on nav links
+        const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992) {
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                    navbarCollapse.classList.remove('show');
+                    navbarBackdrop.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Handle dropdown toggle on mobile
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth < 992) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.dropdown');
+                    dropdown.classList.toggle('show');
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('show');
+                        }
+                    });
+                }
+            });
+        });
+    }
+}
+
+// Hover dropdown for desktop
+function initHoverDropdown() {
+    const dropdownItems = document.querySelectorAll('.dropdown');
+    
+    dropdownItems.forEach(item => {
+        if (window.innerWidth >= 992) {
+            // Desktop - hover to open
+            item.addEventListener('mouseenter', function() {
+                const dropdownMenu = this.querySelector('.dropdown-menu');
+                if (dropdownMenu) {
+                    dropdownMenu.classList.add('show');
+                }
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const dropdownMenu = this.querySelector('.dropdown-menu');
+                if (dropdownMenu) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        }
+    });
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('show');
+        }
+    });
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    // Close all dropdowns on resize
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('show');
+    });
+    
+    // Reinitialize hover functionality
+    initHoverDropdown();
+});
+
+// Tab functionality
+function initTabs() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const contentSections = document.querySelectorAll('.content-section');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and sections
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            contentSections.forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show corresponding content section
+            const tabId = button.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+}
+
+// Scroll animations
+function initScrollAnimations() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+// Navbar scroll behavior
+function initNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+
+// Contact form handling
+function initContactForm() {
     const contactForm = document.getElementById('contactForm');
+    
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                service: document.getElementById('service').value,
-                message: document.getElementById('message').value
-            };
+            // Simple form validation
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
             
-            // Simple validation
-            if (!formData.name || !formData.email || !formData.service || !formData.message) {
-                showMessage('Please fill in all required fields.', 'error');
+            if (!firstName || !email || !message) {
+                alert('Please fill in all required fields.');
                 return;
             }
             
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(formData.email)) {
-                showMessage('Please enter a valid email address.', 'error');
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
                 return;
             }
             
-            // Simulate form submission
-            showMessage('Thank you for your message! We will get back to you soon.', 'success');
-            
-            // Reset form
+            // In a real application, you would send the form data to a server here
+            alert('Thank you for your message! We will get back to you soon.');
             contactForm.reset();
         });
     }
+}
+
+// Dropdown animations
+function initDropdownAnimations() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     
-    // Show message function
-    function showMessage(message, type) {
-        const messageBox = document.getElementById('messageBox');
-        messageBox.textContent = message;
-        messageBox.className = 'message-box show';
-        
-        if (type === 'success') {
-            messageBox.style.backgroundColor = '#4CAF50';
-        } else if (type === 'error') {
-            messageBox.style.backgroundColor = '#F44336';
-        }
-        
-        setTimeout(function() {
-            messageBox.className = 'message-box';
-        }, 3000);
-    }
-    
-    // Mobile menu toggle for Bootstrap
-    const mobileMenuBtn = document.querySelector('.navbar-toggler');
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            const target = this.getAttribute('data-bs-target');
-            const menu = document.querySelector(target);
-            menu.classList.toggle('show');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('show.bs.dropdown', function() {
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.classList.add('animate__animated', 'animate__fadeIn');
         });
-    }
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a.nav-link').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                        navbarCollapse.classList.remove('show');
-                    }
-                }
-            }
+        
+        toggle.addEventListener('hide.bs.dropdown', function() {
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.classList.remove('animate__animated', 'animate__fadeIn');
+            dropdownMenu.classList.add('animate__animated', 'animate__fadeOut');
         });
     });
+}
+
+// Add animation classes to elements on scroll
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.service-card, .pricing-card, .testimonial-card');
     
-    // Navbar background change on scroll
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.style.backgroundColor = '#ffffff';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.backgroundColor = '#ffffff';
-            navbar.style.boxShadow = 'none';
-        }
-    });
-    
-    // Initialize Bootstrap carousel with custom interval
-    const testimonialCarousel = document.querySelector('#testimonialCarousel');
-    if (testimonialCarousel) {
-        const carousel = new bootstrap.Carousel(testimonialCarousel, {
-            interval: 5000,
-            wrap: true
-        });
-    }
-    
-    // Add animation to elements when they come into view
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
     
-    // Observe service cards and other elements
-    document.querySelectorAll('.service-preview-card, .about-content, .testimonial-slide').forEach(el => {
-        observer.observe(el);
+    elements.forEach(element => {
+        element.style.opacity = 0;
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(element);
     });
-});
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', animateOnScroll);
