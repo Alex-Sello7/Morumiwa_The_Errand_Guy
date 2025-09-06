@@ -129,7 +129,7 @@ img {
 }
 
 /* Navigation */
-/* Navigation Styles */
+
 .navbar {
     padding: 1rem 0;
     transition: all 0.3s ease;
@@ -194,12 +194,10 @@ img {
         padding: 0.5rem 1rem;
     }
     
-    /* Remove underline from dropdown only */
     .navbar-nav .dropdown > .nav-link::after {
         display: none;
     }
     
-    /* Add underline to non-dropdown links */
     .navbar-nav .nav-item:not(.dropdown) .nav-link::after {
         content: '';
         position: absolute;
@@ -260,7 +258,6 @@ img {
         transform: rotate(180deg);
     }
     
-    /* Keep dropdown visible when menu is open */
     .dropdown.show .dropdown-menu {
         display: block;
     }
@@ -286,7 +283,6 @@ img {
     display: block;
 }
 
-/* Ensure proper spacing for mobile */
 @media (max-width: 576px) {
     .navbar-brand > .d-flex {
         flex-direction: column;
@@ -307,24 +303,6 @@ img {
         text-align: center;
     }
 }
-
-/* Mobile navigation close button */
-.navbar-close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--gray-800);
-    display: none;
-    z-index: 1001;
-}
-
-@media (max-width: 991px) {
-    .navbar-close-btn {
-        display: block;
-    }
     
     /* Ensure proper chevron rotation */
     .dropdown.show .dropdown-chevron {
